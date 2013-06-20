@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+lib = File.expand_path('../../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+
+require 'json'
+require 'zippy_foods'
+
+json_text = ''
+while line = gets
+  json_text << line
+end
+
+data = JSON.load(json_text)
+tablifier = ZippyFoods::Tablifier.new(data)
+tablifier.table.each do |row|
+  puts row.join("\t")
+end

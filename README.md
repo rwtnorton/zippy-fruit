@@ -1,6 +1,6 @@
-# Zippy::Foods
+# ZippyFoods
 
-TODO: Write a gem description
+Toy solution for mapping simple Hash to columlar table.
 
 ## Installation
 
@@ -18,7 +18,23 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+As a library:
+
+  require 'zippy_foods'
+  data = {:en => %w[one two three],
+          :jp => %w[ichi ni san shi go roku],
+          :primes => [2, 3, 5, 7, 11, 13, 17, 19],}
+  tablifier = ZippyFoods::Tablifier.new(data)
+  tablifier.table.each do |row|
+    puts row.join("\t")
+  end
+
+From the commandline:
+
+  $ cd zippy-foods/dir
+  $ cat some.json |./bin/tablify
+  ### or equivalently as:
+  $ ./bin/tablify some.json
 
 ## Contributing
 
