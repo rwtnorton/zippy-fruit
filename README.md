@@ -20,21 +20,21 @@ Or install it yourself as:
 
 As a library:
 
-  require 'zippy_foods'
-  data = {:en => %w[one two three],
-          :jp => %w[ichi ni san shi go roku],
-          :primes => [2, 3, 5, 7, 11, 13, 17, 19],}
-  tablifier = ZippyFoods::Tablifier.new(data)
-  tablifier.table.each do |row|
-    puts row.join("\t")
-  end
+    require 'zippy_foods'
+    data = {:en => %w[one two three],
+            :jp => %w[ichi ni san shi go roku],
+            :primes => [2, 3, 5, 7, 11, 13, 17, 19],}
+    tablifier = ZippyFoods::Tablifier.new(data)
+    tablifier.table.each do |row|
+      puts row.join("\t")
+    end
 
 From the commandline:
 
-  $ cd zippy-foods/dir
-  $ cat some.json |./bin/tablify
-  ### or equivalently as:
-  $ ./bin/tablify some.json
+    $ cd zippy-foods/dir
+    $ cat some.json |./bin/tablify
+    ### or equivalently as:
+    $ ./bin/tablify some.json
 
 ## Contributing
 
